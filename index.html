@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>니짐내짐 · 멤버십 카드 배경 설정 (시안 v1.0)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="app.css?v=11">
+</head>
+<body>
+<header class="demo">
+  <div class="demo-h">멤버십 카드 배경 · 센터별 설정 <span>시안 v1.0 · 저장은 이 브라우저에만</span></div>
+  <nav class="demo-nav">
+    <a data-view="admin" class="on">① 센터 관리자 · 설정</a>
+    <a data-view="app">② 회원 앱 · 내 멤버십</a>
+    <a data-act="sample">예시 설정 넣기</a>
+    <a data-act="reset">모두 지우기</a>
+  </nav>
+</header>
+
+<main id="view-admin" class="view on">
+  <div class="adm">
+    <aside class="adm-side">
+      <div class="adm-logo">니짐내짐 <b>파트너</b></div>
+      <ul>
+        <li>회원 관리</li><li>상품 관리</li><li>매출·정산</li>
+        <li class="grp">센터 설정</li>
+        <li class="sub">기본 정보</li>
+        <li class="sub on">멤버십 카드 배경</li>
+      </ul>
+    </aside>
+    <section class="adm-main">
+      <div class="adm-top">
+        <div>
+          <h1>멤버십 카드 배경</h1>
+          <p class="adm-desc">회원 앱 «내 멤버십» 카드의 <b>배경만</b> 바뀌어요. 글자 위치·크기와 입장하기 버튼은 그대로예요.</p>
+        </div>
+        <label class="adm-center">센터
+          <select id="centerSel"></select>
+        </label>
+      </div>
+
+      <div class="adm-grid">
+        <div class="adm-opts">
+          <div class="opt" data-type="default">
+            <div class="opt-h"><span class="radio"></span>기본 배경 <small>지금 쓰는 연회색</small></div>
+          </div>
+
+          <div class="opt" data-type="template">
+            <div class="opt-h"><span class="radio"></span>니짐내짐 템플릿 <small>10종</small></div>
+            <div class="opt-b">
+              <div class="tpl-label">단색</div>
+              <div class="tpl-grid" id="tplSolid"></div>
+              <div class="tpl-label">그라데이션</div>
+              <div class="tpl-grid" id="tplGrad"></div>
+            </div>
+          </div>
+
+          <div class="opt" data-type="image">
+            <div class="opt-h"><span class="radio"></span>내 이미지 올리기</div>
+            <div class="opt-b">
+              <label class="up" id="upBox">
+                <input type="file" id="fileIn" accept="image/jpeg,image/png,image/webp">
+                <span class="up-t" id="upTitle">사진 고르기</span>
+                <span class="up-s">JPG·PNG·WEBP · 5MB 이하 · 가로 600px 이상</span>
+              </label>
+              <p class="err" id="upErr" hidden></p>
+              <div class="pos" id="posBox" hidden>
+                <div class="pos-h">위치 조정 <small>미리보기 카드를 끌어도 움직여요</small></div>
+                <label>좌우 <input type="range" id="posX" min="0" max="100" step="1"></label>
+                <label>위아래 <input type="range" id="posY" min="0" max="100" step="1"></label>
+                <p class="pos-note" id="posNote"></p>
+                <button class="btn-s" id="posCenter" type="button">가운데로</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="adm-prev">
+          <div class="prev-h">미리보기 <small>회원 앱과 같은 크기</small></div>
+          <div class="prev-phone">
+            <div class="mcard" id="prevCard"></div>
+            <div class="enter">입장하기</div>
+          </div>
+          <dl class="readout" id="readout"></dl>
+          <div class="acts">
+            <button class="btn-g" id="btnReset" type="button">기본값으로 되돌리기</button>
+            <button class="btn-p" id="btnSave" type="button">저장하기</button>
+          </div>
+          <p class="saved" id="savedNote"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<main id="view-app" class="view">
+  <div class="phone" id="phone">
+    <div class="sbar"><span>3:56</span><span class="sb-r">LTE ▮</span></div>
+    <h2 class="ttl">내 멤버십</h2>
+    <div class="car" id="car"></div>
+    <p class="op">정상운영 중입니다.</p>
+    <div class="pt"><div class="pt-r"><span class="pt-ic">P</span>보유포인트<b>90,372,373원</b></div><p class="pt-s">ⓘ 입장 버튼 누를때 마다 포인트 적립</p></div>
+    <div class="band"></div>
+    <h3 class="no">N-ORDER</h3>
+    <div class="nav"><span>홈</span><span>내주변</span><span class="on">멤버십</span><span>전체</span></div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+<canvas id="calc" hidden></canvas>
+<script src="cardbg.js?v=11"></script>
+<script src="app.js?v=11"></script>
+</body>
+</html>
