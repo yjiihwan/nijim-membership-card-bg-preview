@@ -28,13 +28,13 @@
   ];
 
   const TEMPLATES = [
-    { id: 'S01', group: 'solid', name: '로즈 틴트', css: '#FFEDF3', stops: [['#FFEDF3', 0]] },
-    { id: 'S02', group: 'solid', name: '스카이 틴트', css: '#E6F3FF', stops: [['#E6F3FF', 0]] },
-    { id: 'S03', group: 'solid', name: '샌드', css: '#F1ECE4', stops: [['#F1ECE4', 0]] },
+    { id: 'S01', group: 'solid', name: '비비드 오렌지', css: '#CC3F00', stops: [['#CC3F00', 0]] },
+    { id: 'S02', group: 'solid', name: '일렉트릭 퍼플', css: '#9D1FD1', stops: [['#9D1FD1', 0]] },
+    { id: 'S03', group: 'solid', name: '에메랄드 그린', css: '#007F56', stops: [['#007F56', 0]] },
     { id: 'S04', group: 'solid', name: '차콜 잉크', css: '#16161C', stops: [['#16161C', 0]] },
     { id: 'S05', group: 'solid', name: '딥 인디고', css: '#253DBE', stops: [['#253DBE', 0]] },
-    { id: 'G01', group: 'gradient', name: '블러시', angle: 135, stops: [['#FFF7FA', 0], ['#FFD3E2', 1]] },
-    { id: 'G02', group: 'gradient', name: '모닝 스카이', angle: 135, stops: [['#F5FAFF', 0], ['#C9E6FF', 1]] },
+    { id: 'G01', group: 'gradient', name: '선셋', angle: 135, stops: [['#CC3F00', 0], ['#B5179E', 1]] },
+    { id: 'G02', group: 'gradient', name: '블루 바이올렛', angle: 135, stops: [['#0050E6', 0], ['#7B2FF7', 1]] },
     { id: 'G03', group: 'gradient', name: '미드나잇', angle: 160, stops: [['#121218', 0], ['#2C2E3E', 1]] },
     { id: 'G04', group: 'gradient', name: '오션 딥', angle: 120, stops: [['#1B2B8F', 0], ['#2156C4', 0.6], ['#2C86D6', 1]] },
     { id: 'G05', group: 'gradient', name: '로즈 딥', angle: 135, stops: [['#A3003F', 0], ['#D4004F', 1]] },
