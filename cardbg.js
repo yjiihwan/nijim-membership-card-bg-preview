@@ -1,4 +1,4 @@
-/* 멤버십 카드 배경 — 템플릿 10종 + 글자색 자동 대비 계산 (브라우저·Node 공용)
+/* 멤버십 카드 배경 — 템플릿 12종 + 글자색 자동 대비 계산 (브라우저·Node 공용)
    외부 개발자 전달 꾸러미의 기준 구현. 저장 시 1회 계산해서 결과(textColor·scrimAlpha)를 DB에 넣고,
    고객앱은 저장된 값만 그린다(고객앱에서 다시 계산하지 않음). */
 (function (root) {
@@ -38,9 +38,12 @@
     { id: 'G03', group: 'gradient', name: '미드나잇', angle: 160, stops: [['#121218', 0], ['#2C2E3E', 1]] },
     { id: 'G04', group: 'gradient', name: '오션 딥', angle: 120, stops: [['#1B2B8F', 0], ['#2156C4', 0.6], ['#2C86D6', 1]] },
     { id: 'G05', group: 'gradient', name: '로즈 딥', angle: 135, stops: [['#A3003F', 0], ['#D4004F', 1]] },
+    // 메탈릭: 밝은 금속이라 글자는 검정 계열로 자동 전환. 은은한 명암 + 대각선 광택 띠 1줄(반짝이·입체 효과 없음)
+    { id: 'M01', group: 'metal', name: '메탈릭 실버', angle: 115, stops: [['#8F959E', 0], ['#B9BEC5', 0.3], ['#E9ECEF', 0.46], ['#C3C8CE', 0.56], ['#A2A8B0', 0.8], ['#8C929B', 1]] },
+    { id: 'M02', group: 'metal', name: '메탈릭 골드', angle: 115, stops: [['#B98B32', 0], ['#D2A64A', 0.3], ['#F3DC97', 0.46], ['#D9B055', 0.56], ['#C49638', 0.8], ['#B4862E', 1]] },
   ];
   TEMPLATES.forEach((t) => {
-    if (t.group === 'gradient') t.css = `linear-gradient(${t.angle}deg, ${t.stops.map(([c, p]) => `${c} ${Math.round(p * 100)}%`).join(', ')})`;
+    if (t.group !== 'solid') t.css = `linear-gradient(${t.angle}deg, ${t.stops.map(([c, p]) => `${c} ${Math.round(p * 100)}%`).join(', ')})`;
   });
 
   const hexToRgb = (h) => {

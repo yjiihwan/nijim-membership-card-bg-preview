@@ -96,6 +96,7 @@
     const mk = (t) => `<div class="tpl" data-id="${t.id}"><div class="tpl-sw" style="background:${t.css}"><span style="color:${t.textColor}">196</span></div>${esc(t.name)}</div>`;
     $('#tplSolid').innerHTML = C.TEMPLATES.filter((t) => t.group === 'solid').map(mk).join('');
     $('#tplGrad').innerHTML = C.TEMPLATES.filter((t) => t.group === 'gradient').map(mk).join('');
+    $('#tplMetal').innerHTML = C.TEMPLATES.filter((t) => t.group === 'metal').map(mk).join('');
   }
 
   async function precomputeTemplates() {
