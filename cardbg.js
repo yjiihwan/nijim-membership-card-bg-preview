@@ -1,4 +1,4 @@
-/* 멤버십 카드 배경 — 템플릿 13종 + 글자색 자동 대비 계산 (브라우저·Node 공용)
+/* 멤버십 카드 배경 — 템플릿 14종 + 글자색 자동 대비 계산 (브라우저·Node 공용)
    외부 개발자 전달 꾸러미의 기준 구현. 저장 시 1회 계산해서 결과(textColor·scrimAlpha)를 DB에 넣고,
    고객앱은 저장된 값만 그린다(고객앱에서 다시 계산하지 않음). */
 (function (root) {
@@ -33,6 +33,8 @@
     { id: 'S03', group: 'solid', name: '에메랄드 그린', css: '#007F56', stops: [['#007F56', 0]] },
     { id: 'S04', group: 'solid', name: '차콜 잉크', css: '#16161C', stops: [['#16161C', 0]] },
     { id: 'S05', group: 'solid', name: '딥 인디고', css: '#253DBE', stops: [['#253DBE', 0]] },
+    // 레드: 오렌지(S01, 색상각 18°)·로즈 딥(G05, 337°)과 겹치지 않게 정확히 빨강(0°)에 둠
+    { id: 'S06', group: 'solid', name: '딥 레드', css: '#C41414', stops: [['#C41414', 0]] },
     { id: 'G01', group: 'gradient', name: '선셋', angle: 135, stops: [['#CC3F00', 0], ['#B5179E', 1]] },
     { id: 'G02', group: 'gradient', name: '블루 바이올렛', angle: 135, stops: [['#0050E6', 0], ['#7B2FF7', 1]] },
     { id: 'G03', group: 'gradient', name: '미드나잇', angle: 160, stops: [['#121218', 0], ['#2C2E3E', 1]] },
